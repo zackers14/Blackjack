@@ -5,14 +5,14 @@ import java.util.*;
 
 public class Deck {
 
-   private Card[][] CurrentDeck = new Card[4][12];
+   private Card[][] CurrentDeck = new Card[4][13];
    private List<Card> DealtCards = new ArrayList<Card>();
 
    //Deck constructor, builds the current deck with appropriate cards in the correct order
    public Deck(){
       for(int i = 0; i < 4; i++){
       
-         for(int j = 0; j < 12; j++){
+         for(int j = 0; j < 13; j++){
          
             CurrentDeck[i][j] = new Card(j+1, i, i + " " + j);
          }
@@ -30,7 +30,7 @@ public class Deck {
        if (player.action) {
            while (!cardDealt) {
                randomIndex1 = (int) Math.floor(Math.random() * 4);
-               randomIndex2 = (int) Math.floor(Math.random() * 12);
+               randomIndex2 = (int) Math.floor(Math.random() * 13);
                randomCard = CurrentDeck[randomIndex1][randomIndex2];
                if (randomCard != null) {
                    player.hand.add(randomCard);
@@ -63,10 +63,10 @@ public class Deck {
    
       for(int i = 0; i < 4; i++){
       
-         for(int j = 0; j < 12; j++){
+         for(int j = 0; j < 13; j++){
          
             randomIndex1 = (int) Math.floor(Math.random() * 4);
-            randomIndex2 = (int) Math.floor(Math.random() * 12);
+            randomIndex2 = (int) Math.floor(Math.random() * 13);
             currentCard = CurrentDeck[i][j];
             if (currentCard == null){
                CurrentDeck[i][j] = DealtCards.get(listCounter);
